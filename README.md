@@ -1,55 +1,58 @@
-# Proyecto Final
+# Final Proyect
 
-# Instrucciones de Instalación
+This is the RestFull Api of the application of the Final Proyect subject from the career of Computering System Engineering of the UTN of Argentina. This proyect is about the building of a teaching platform of the Natural Cience, particularly for the teaching of the contents of the human body. The application has some features on Augmented Reality that should improve at teaching to the students and it is focused on the evaluation process of them.
+This is a forked repository and the proyect is actualy being in development.
 
-Este documento describe los pasos necesarios para configurar el entorno de desarrollo en la PC local bajo sistemas operativos Linux utilizando Docker.
+# Instalation Steps
 
-### Pre instalación del Proyecto.
+This document describes the needed steps in order to configure the development enviroment for the local PC under Linux operative systems by using Docker.
 
-* Tener instalado **Git**.
-* Tener instalado **Composer**.
-* Tener **docker** y **docker-compose** instalados (utilizar las guías de Digital Ocean que estan bien documentadas).
-* Tener instalado **php-client** **php-mbstring**.
+### Requirements for installing the proyect.
 
-### Clonar los repositorios de Github
+* Have already installed **Git**.
+* Have already installed **Composer**.
+* Have already installed **docker** and **docker-compose** (use the Digital Ocean guides. They are well documented).
+* Have already installed **php-client** **php-mbstring**.
 
-Clonar lo repos en el directorio de elección.
+### Clone the repositories of Github
 
-* Repo de la **api** (backend):
+Clone the repositories under the directory of election with the name of your choice.
+
+* Repository of the **api** (backend):
 
 ``` 
-git clone git@github.com:sbarrautn/ProyectoFinalBackEnd api
+git clone git@github.com:emi310397/ProyectoFinalBackEnd api
 ```
 
-* Repo de la app **web** (frontend):
+* Repository of the **web** app (frontend):
 
 ``` 
 git clone git@github.com:sbarrautn/ProyectoFinalFrontEnd web
 ```
 
-* Repo de los contenedores de **docker** (docker):
+* Repository of the containers **docker** (docker):
 
 ``` 
 git clone git@github.com:sbarrautn/ProyectoFinalDocker docker
 ```
 
-### Instalación de los contenedores de Docker.
+### Instalation of the Docker containers.
 
-1. Entrar en la carpeta de docker del proyecto. (`/docker`)
+1. Enter to the proyect docker folder. (`/docker`)
 
-2. Ejecutar un `docker-compose pull`
+2. Execute `docker-compose pull`
 
-3. Ejecutar un `docker-compose up -d`
+3. Execute `docker-compose up -d`
 
-4. Encender los contenedores con `docker-compose start` o `pfd start`
+4. Start the containers with `docker-compose start` or `pfd start`
 
-5. Para verificar que se encuentran los contenedores y ver sus estados `docker-compose ps`
+5. To verify that all containers have started and see their status `docker-compose ps`
 
-6. Modificar el `.env` del docker agregando las rutas para cada repo.
+6. Edit the `.env` file of the docker by adding the routes of each repository folder.
 
-7. (Opcional) Si queremos desentendernos de las IPs, modificar el host local `sudo /etc/hosts` mapeando las IPs con un dominio que reconozcamos facilmente. Por ej:
-`10.5.0.2        api.proyecto.test`
-`10.5.0.6        proyecto.test`
+7. (Optional) If we don't want to remember al the IPs, we can edit the local host file `sudo /etc/hosts` by mapping each IP with a easy to remember domain name. For example:
+`10.5.0.2        api.proyect.test`
+`10.5.0.6        proyect.test`
 
 8. (Opcional) Para poder utilizar el comando `pfd` y que nos autocomplete los comandos: `pfd install-bash-completions`
 
