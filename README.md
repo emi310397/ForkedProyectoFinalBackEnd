@@ -1,18 +1,18 @@
-# Final Proyect
+# Final Project
 
-This is the RestFull Api of the application of the Final Proyect subject from the career of Computering System Engineering of the UTN of Argentina. This proyect is about the building of a teaching platform of the Natural Cience, particularly for the teaching of the contents of the human body. The application has some features on Augmented Reality that should improve at teaching to the students and it is focused on the evaluation process of them.
-This is a forked repository and the proyect is actualy being in development.
+This is the RestFull Api of the application for the Final Project subject from the career of Information System Engineering of the UTN of Argentina. This project is about the building of a teaching platform of the Natural Cience, particularly for the teaching of the contents of the human body. The application has some features on Augmented Reality that should improve at teaching to the students and it is focused on the evaluation process of them.
+This is a forked repository and the project is actualy being under development.
 
 # Instalation Steps
 
-This document describes the needed steps in order to configure the development enviroment for the local PC under Linux operative systems by using Docker.
+This document describes the needed steps in order to configure the development environment for the local PC under Linux operating systems by using Docker.
 
-### Requirements for installing the proyect.
+### Requirements for installing the project.
 
-* Have already installed **Git**.
-* Have already installed **Composer**.
-* Have already installed **docker** and **docker-compose** (use the Digital Ocean guides. They are well documented).
-* Have already installed **php-client** **php-mbstring**.
+* Already installed **Git**.
+* Already installed **Composer**.
+* Already installed **docker** and **docker-compose** (use the Digital Ocean guides. They are well documented).
+* Already installed **php-client** **php-mbstring**.
 
 ### Clone the repositories of Github
 
@@ -38,7 +38,7 @@ git clone git@github.com:sbarrautn/ProyectoFinalDocker docker
 
 ### Instalation of the Docker containers.
 
-1. Enter to the proyect docker folder. (`/docker`)
+1. Enter to the project docker folder. (`/docker`)
 
 2. Execute `docker-compose pull`
 
@@ -50,18 +50,18 @@ git clone git@github.com:sbarrautn/ProyectoFinalDocker docker
 
 6. Edit the `.env` file of the docker by adding the routes of each repository folder.
 
-7. (Optional) If we don't want to remember al the IPs, we can edit the local host file `sudo /etc/hosts` by mapping each IP with a easy to remember domain name. For example:
-`10.5.0.2        api.proyect.test`
-`10.5.0.6        proyect.test`
+7. (Optional) If we don't want to remember al the IPs, we can edit the local host file `sudo /etc/hosts` by mapping each IP with a easy to remember domain name. For eg:
+`10.5.0.2        api.project.test`
+`10.5.0.6        project.test`
 
-8. (Opcional) Para poder utilizar el comando `pfd` y que nos autocomplete los comandos: `pfd install-bash-completions`
+8. (Optional) In order to use the `pfd` command and get autocompleted the rest of commands: `pfd install-bash-completions`
 
-9. (Opcional) Para poder utilizar el comando `pfd` desde cualquier directorio y no solo desde `/docker`:
-    * Entramos para modificar nuestro `~/.profile`.
-    * Agregar la siguiente línea `PATH="$HOME/dev/proyecto/docker/scripts/:$PATH"` al final de nuestro `~/.profile`.
-    * Si queremos probar de que funciona sin tener que reiniciar, recargamos el nuevo path: `source ~/.profile`
+9. (Optional) In order to use the `pfd` command from any directory and not only from `/docker`:
+    * We enter to edit our `~/.profile`.
+    * Add the next line `PATH="$HOME/dev/project/docker/scripts/:$PATH"` at the end of `~/.profile`.
+    * If we want to test if it is working wihtout rebooting, reload the new path: `source ~/.profile`
 
-### Realizar la instalación de composer en el proyecto de la api.
+### Install composer in the project of the Api.
 
 ```
 https://getcomposer.org/download/
@@ -72,69 +72,69 @@ php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece38
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
 ```
-PD: Tener en cuenta que el hash de arriba siempre se actualiza por lo que es mejor entrar a la página de composer.
+PD: Consider that the previous hash is being updated so it is better to enter to the composer site.
 
-Copiamos el `composer.phar` de instalación que nos proveen los comandos anteriores en la carpeta raíz del proyecto de la api.
+Copy the `composer.phar` from the installation provided by the previous commands to the root folder of the Api of the project.
 
-### Contenedor de api (Backend)
+### Api container (Backend)
 
-Si queremos entrar al container de la api: `pfd commander` o `pfd bash` o `docker exec -it proyecto_api bash`.
+If we want to enter to the Api container: `pfd commander` or `pfd bash` or `docker exec -it proyecto_api bash`.
 
-### Contenedor de web (Frontend)
+### Web container (Frontend)
 
-Si queremos entrar al container de la web: `pfd frontend-start` o `docker exec -it proyecto_web bash`.
+If we want to enter to the Web container: `pfd frontend-start` or `docker exec -it proyecto_web bash`.
 
-### Instalación de las dependencias.
+### Dependencies installation.
 
-1. Acceder al Lord Commander (Ricky Fort) ejecutando `pfd commander` o `pfd bash` o `docker exec -it proyecto_api bash` (basicamente es nuestro bash de nginx)
+1. Enter to the Lord Commander (Ricky Fort) executing `pfd commander` or `pfd bash` or `docker exec -it proyecto_api bash` (Wich is basicaly our Nginx bash)
 
-2. Ejecutamos `./composer.phar install` para la descarga de las dependencias de Laravel.
+2. Execute `./composer.phar install` to download all the Laravel dependencies.
 
-### Crear archivo de Enviroment
+### Create an Enviroment file
 
-1. Crear un archivo ```.env```
+1. Create a ```.env``` file.
 
-2. Copiar lo que existe en el ```.env.example```
+2. Copy from the ```.env.example``` file.
 
-3. Modificar las variables que sean necesarias.
+3. Edit the variables that are necessary.
 
-4. Ejecutar para tener el `.env` completo y correcto `php artisan key:generate`.
+4. Execute in order to complete the `.env` file `php artisan key:generate`.
 
-Este archivo contiene las credenciales de las cuentas de los servicios utilizados.
+This file has all the credentials of the used account services.
 
-### Configuración de la Base de Datos.
+### Database configuration.
 
-1. Instalar mysql-client
+1. Install mysql-client
 
-2. Ejecutamos `pfd bash database` o `docker exec -it proyecto_database bash` (con esto ingresamos al Mysql del docker)
+2. Execute `pfd bash database` or `docker exec -it proyecto_database bash` (With this, we enter to the Mysql docker)
 
-4. Ejecutamos `mysql -uroot -psecret`
+4. Execute `mysql -uroot -psecret`
 
-5. Creamos la BD: `create database proyecto;`
+5. Create the DB: `create database project;`
 
-6. Verificamos la creación de la misma con: `show databases;`
+6. Verify the DB creation: `show databases;`
 
-7. Salimos si la creamos con éxito: `exit`.
+7. We get out if the DB was created successfully: `exit`.
 
-### Ejecución de las migraciones (Laravel)
+### Migration execution (Laravel)
 
-1. Primeramente actualizar el archivo `.env` con los datos correspondientes de la BD:
+1. First, update the `.env` file with the DB credentials:
 
 ```
 DB_CONNECTION=mysql
 DB_HOST=mysql
 DB_PORT=3306
-DB_DATABASE=proyecto
+DB_DATABASE=project
 DB_USERNAME=root
 DB_PASSWORD=secret
 ```
 
-1. Entramos al bash de la api (Lord Commander) ubicados en `/docker` ejecutar: `pfd commander` o `pfd bash` o `docker exec -it proyecto_api bash`.
+1. Enter to the bash of the Api (Lord Commander) in `/docker` and execute: `pfd commander` or `pfd bash` or `docker exec -it proyecto_api bash`.
 
-2. Ejecutamos dentro del bash `php artisan doctrine:clear:metadata:cache` para limpiar la cache de doctrine.
+2. Execute in the bash `php artisan doctrine:clear:metadata:cache` in order to clean the Doctrine cache.
 
-3. Ejecutamos dentro del bash `php artisan doctrine:migrations:migrate` o `php artisan doctrine:migrations:refresh` dependiendo del contexto de trabajo.
+3. Execute in the bash `php artisan doctrine:migrations:migrate` or `php artisan doctrine:migrations:refresh` depending on the working context.
 
-4. Una vez terminada la ejecución ya tendremos las tablas correspondientes en nuestra base de datos `proyecto`.
+4. Once finished the execution we will hace all the tables of our DB `project`.
 
-5. Listo! ya podemos salir del comandante: `exit`.
+5. That's all! We can get out from the Commander: `exit`.
